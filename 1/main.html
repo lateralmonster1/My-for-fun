@@ -5,30 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Flipper</title>
     <style>
-#green {
-    background-color: green;
-} 
-#red {
-    background-color: red;
-}
-#blue {
-    background-color: blue;
-}
-button {
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    margin: 5px;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3ec78, #af4261);
+            color: #fff;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            border-radius: 10px;
+            width: 120px;
+            height: 50px;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button#green {
+            background-color: #28a745;
+        }
+
+        button#red {
+            background-color: #dc3545;
+        }
+
+        button#blue {
+            background-color: #007bff;
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .random {
+            background-color: #ffc107;
+        }
     </style>
 </head>
 <body>
-    <h3>Color Flipper</h3>
-    <button id="green" onclick="setColor('green')">Green</button>
-    <button id="red" onclick="setColor('red')">Red</button>
-    <button id="blue" onclick="setColor('blue')">Blue</button>
-    <button onclick="randomColor()">Random</button>
+    <div>
+        <h3>Color Flipper</h3>
+        <div id="button-container">
+            <button id="green" onclick="setColor('green')">Green</button>
+            <button id="red" onclick="setColor('red')">Red</button>
+            <button id="blue" onclick="setColor('blue')">Blue</button>
+            <button class="random" onclick="randomColor()">Random</button>
+        </div>
+    </div>
     <script src="../1/index.js"></script>
-    
 </body>
 </html>
