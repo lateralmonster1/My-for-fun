@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Flipper</title>
+    <title id="title-color">Color Flipper</title>
     <style>
+       #h-color{
+color:purple;
+       }
+       
         body {
             display: flex;
             justify-content: center;
@@ -12,8 +16,6 @@
             height: 100vh;
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f3ec78, #af4261);
-            color: #fff;
         }
 
         h3 {
@@ -47,7 +49,7 @@
         }
 
         button#blue {
-            background-color: #007bff;
+            background-color: blue;
         }
 
         button:hover {
@@ -67,7 +69,7 @@
 </head>
 <body>
     <div>
-        <h3>Color Flipper</h3>
+        <h3 id="h-color">Color Flipper</h3>
         <div id="button-container">
             <button id="green" onclick="setColor('green')">Green</button>
             <button id="red" onclick="setColor('red')">Red</button>
