@@ -4,6 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop Watch</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            color: #fff;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: magenta;
+            margin-bottom: 10px;
+        }
+
+        #time {
+            font-size: 5rem;
+            font-weight: bold;
+            color: magenta;
+            background-color: #2b2b2b;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: magenta;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #c700c7;
+        }
+
+        button:active {
+            background-color: #9e009e;
+        }
+
+    </style>
 </head>
 <body>
     <h3>Stop Watch</h3>
