@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title-color">Color Flipper</title>
     <style>
-       #h-color{
-color:purple;
-       }
-       
         body {
             display: flex;
             justify-content: center;
@@ -16,11 +12,14 @@ color:purple;
             height: 100vh;
             margin: 0;
             font-family: 'Arial', sans-serif;
+            transition: background-color 1s ease;
         }
 
         h3 {
             font-size: 2rem;
             margin-bottom: 20px;
+            color: purple;
+            animation: colorChange 2s infinite alternate;
         }
 
         #button-container {
@@ -38,6 +37,7 @@ color:purple;
             font-size: 1rem;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: bounce 1s ease infinite alternate;
         }
 
         button#green {
@@ -52,9 +52,13 @@ color:purple;
             background-color: blue;
         }
 
+        button.random {
+            background-color: #ffc107;
+        }
+
         button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         button:active {
@@ -62,8 +66,31 @@ color:purple;
             box-shadow: none;
         }
 
-        .random {
-            background-color: #ffc107;
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: purple;
+            }
+            100% {
+                color: orange;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -77,6 +104,19 @@ color:purple;
             <button class="random" onclick="randomColor()">Random</button>
         </div>
     </div>
-    <script src="../1/index.js"></script>
+
+    <script>
+        function setColor(color) {
+            document.body.style.backgroundColor = color;
+            document.getElementById('h-color').style.color = color;
+        }
+
+        function randomColor() {
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            setColor(randomColor);
+        }
+
+        document.body.style.animation = "fadeIn 2s ease";
+    </script>
 </body>
 </html>
